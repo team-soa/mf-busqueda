@@ -1,8 +1,8 @@
 <div class="fondo">
     <nav class="navbar knav">
       <div class="container-fluid">
-        <img class="logo btn"  src="..\assets\imgs\Asset 3logo_mic.svg">
-  
+        <img class="logo btn"  src="">
+
         <form class="d-flex">
             <label class="klabel" for="myForm">Filtro:</label>
             <select id="myForm" class="form-select kselect">
@@ -11,7 +11,7 @@
           <input class="form-control me-2 ksearch-bar" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btnsearch kbtn-secondary" type="submit">Buscar</button>
         </form>
-  
+
         <button class="nav-item dropdown btn">
           <a class="dropdown-toggle btn btnAux kdropdown" id="navbarDropdown1" role="button" data-bs-toggle="dropdown"
             aria-expanded="false">
@@ -22,9 +22,9 @@
             </svg>
           </a>
           <ul class="dropdown-menu " aria-labelledby="navbarDropdown1">
-            <li><a class="dropdown-item btn" >Inicio</a></li>
-            <li><a class="dropdown-item btn">Lista de reproduccion</a></li>
-            <li><a class="dropdown-item btn">Cerrar sesión</a></li>
+            <li><a class="dropdown-item btn" (click)="navigateTo('VistaPrincipal')">Inicio</a></li>
+            <li><a class="dropdown-item btn" (click)="navigateTo('VistaPremium')">Lista de reproduccion</a></li>
+            <li><a class="dropdown-item btn" (click)="navigateTo('Login')">Cerrar sesión</a></li>
           </ul>
         </button>
       </div>
