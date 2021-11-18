@@ -12,7 +12,7 @@ export class DataManagerService {
 
   constructor(private http: HttpClient, private cookieService: CookieService) {}
 
-  URL = 'http://168.62.39.210:5000/songs'
+  URL = 'http://localhost:4003/songs'
 
   public busqueda(busqueda: Busqueda): Observable<Cancion[]> {
     // @ts-ignore
@@ -25,6 +25,9 @@ export class DataManagerService {
 
 
   nextListaDeCanciones(listaCanciones: Cancion[]) {
-    this.listaCanciones.next(listaCanciones)
+    this.listaCanciones.next(listaCanciones);
+    // this.cookieService.set('busqueda', 'true');
+    // this.cookieService.set("listaCanciones", JSON.stringify(listaCanciones));
+
   }
 }

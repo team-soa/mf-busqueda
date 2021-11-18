@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { DataManagerService } from './services/data-manager.service';
@@ -12,10 +12,7 @@ import { Cancion } from './Clases/Cancion';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent{
-  
-  constructor(private router: Router){}
-  
-  
+
 
   public navigateTo(direccionDeBusqueda: string): void {
     if(direccionDeBusqueda === 'Login'){
@@ -86,7 +83,9 @@ export class AppComponent{
       this.busqueda = new Busqueda()
 
       this.busquedaService.nextListaDeCanciones(resp)
-      console.log(resp)
+      console.log(resp);
+      const event = new CustomEvent('newSearch', { detail: resp });
+      window.dispatchEvent(event);
     });
   }
 
