@@ -26,15 +26,12 @@
         </a>
         <ul class="dropdown-menu " aria-labelledby="navbarDropdown1">
           <li><a class="dropdown-item btn" (click)="navigate('Inicio')">Inicio</a></li>
-          <li *ngIf="premium"><a class="dropdown-item btn" (click)="navigate('UsuarioPremium')">Lista de
-              reproduccion</a></li>
-          <li><a class="dropdown-item btn" (click)="navigate('Dashboard')">Inicio</a></li>
+          <li><a class="dropdown-item btn" (click)="navigate('Dashboard')">Dashboard</a></li>
+          <li *ngIf="premium"><a class="dropdown-item btn" (click)="navigate('UsuarioPremium')">Lista de reproduccion</a></li>
           <li><a class="dropdown-item btn" (click)="navigate('CerrarSesion')">Cerrar sesión</a></li>
         </ul>
       </button>
     </div>
   </nav>
-
-
 </div>
 

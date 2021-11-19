@@ -21,6 +21,10 @@ export class AppComponent{
     if(direccionDeBusqueda === 'VistaPrincipal'){
       this.router.navigateByUrl("VistaPrincipal")
     }
+    if(direccionDeBusqueda === 'Dashboard'){
+      this.router.navigateByUrl("dashboard")
+      console.log('AAAAA')
+    }
     if(direccionDeBusqueda === 'VistaPremium'){
       this.router.navigateByUrl("VistaPremium")
     }
