@@ -92,15 +92,18 @@ export class AppComponent{
 
   public navigate(comprobacion: string): void {
     if (comprobacion === 'UsuarioPremium') {
-      this.vistaPremium = true;
+      this.router.navigateByUrl('/VistaPremium');
     }
     if (comprobacion === 'Inicio') {
-      this.vistaPremium = false;
+      this.router.navigateByUrl('/VistaPrincipal');
+    }
+    if(comprobacion === 'Dashboard'){
+      this.router.navigateByUrl('/Dashboard')
     }
     if (comprobacion === 'CerrarSesion') {
       this.cookieService.delete('token')
       this.cookieService.delete('user')
-      this.router.navigateByUrl('');
+      this.router.navigateByUrl('/Login');
     }
 
   }
