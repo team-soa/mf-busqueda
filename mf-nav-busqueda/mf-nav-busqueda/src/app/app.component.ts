@@ -37,8 +37,9 @@ export class AppComponent{
     private cookieService: CookieService,
     private busquedaService: DataManagerService) { }
 
-  vistaPremium = false
-  premium = true
+  
+  vistaPremium = (this.cookieService.get('tipoVistaActual') === 'premium')
+  premium = this.cookieService.get('rol') === 'premium'
 
   values = [{ value: 'Nombre', nombre: 'Nombre' },
     { value: 'Artista', nombre: 'Artista' },
@@ -64,6 +65,8 @@ export class AppComponent{
   }
 
   public buscarCancionN(): void {
+    this.vistaPremium = (this.cookieService.get('tipoVistaActual') === 'premium')
+    console.log(this.vistaPremium)
     if (this.tipoBusqueda === "Artista") {
       this.busqueda.artista = this.informacionBusqueda
     }
