@@ -12,7 +12,7 @@ export class DataManagerService {
 
   constructor(private http: HttpClient, private cookieService: CookieService) {}
 
-  URL = 'http://20.114.82.7:4003/songs'
+  URL = 'http://20.114.105.27:4003/songs'
 
   public busqueda(busqueda: Busqueda): Observable<Cancion[]> {
     // @ts-ignore
